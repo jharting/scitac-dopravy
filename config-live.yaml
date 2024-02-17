@@ -1,0 +1,24 @@
+
+model: yolov8m.pt
+confidence_threshold: 0.1
+classes_to_count:
+- 2 # car
+- 5 # bus
+- 7 # truck
+
+workdir: workdir
+drop_frames: True # enable with live streams in order to keep processing real-time
+store_frame: False # if enabled, the entire frame is stored in workdir once a vehicle enters the region, otherwise an empty placeholder text file is used instead
+
+# Determines the region in which vehicles are counted
+region_points:
+- [0, 130]
+- [280, 100]
+- [280, 190]
+- [0, 230]
+
+# Remove unused edges of the image stream for faster processing
+crop:
+-
+  - [0, 90]
+  - [210, 270]
