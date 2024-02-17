@@ -42,11 +42,11 @@ Reports can be generated from information stored in `workdir`.
 ```sh
 python evaluate.py
 
-2024-02-05, 08:45, 09:45, 113
-2024-02-06, 08:15, 09:15, 117
-2024-02-07, 08:45, 09:45, 124
-2024-02-08, 08:00, 09:00, 138
-2024-02-09, 08:00, 09:00, 126
+2024-02-05,08:45,09:45,113
+2024-02-06,08:15,09:15,117
+2024-02-07,08:45,09:45,124
+2024-02-08,08:00,09:00,138
+2024-02-09,08:00,09:00,126
 ```
 
 By default, for each day the script identifies the peak hour (4 subsequent 15-minute blocks with highest traffic) within a given window (7:00-17:00 by default).
@@ -55,16 +55,16 @@ Alternatively, a full report which includes the traffic count for each 15-minute
 ```sh
 python evaluate.py -f full
 
-2024-02-05, 08:30, 08:45, 14, 
-2024-02-05, 08:45, 09:00, 35, 
-2024-02-05, 09:00, 09:15, 22, 
-2024-02-05, 09:15, 09:30, 21, 92
-2024-02-05, 09:30, 09:45, 35, 113
-2024-02-05, 09:45, 10:00, 20, 98
-2024-02-05, 10:00, 10:15, 28, 104
-2024-02-05, 10:15, 10:30, 19, 102
-2024-02-05, 10:30, 10:45, 27, 94
-2024-02-05, 10:45, 11:00, 30, 104
+2024-02-05,08:30,08:45,14, 
+2024-02-05,08:45,09:00,35, 
+2024-02-05,09:00,09:15,22, 
+2024-02-05,09:15,09:30,21,92
+2024-02-05,09:30,09:45,35,113
+2024-02-05,09:45,10:00,20,98
+2024-02-05,10:00,10:15,28,104
+2024-02-05,10:15,10:30,19,102
+2024-02-05,10:30,10:45,27,94
+2024-02-05,10:45,11:00,30,104
 ```
 
 The last column contains the traffic sum for the corresponding "floating hour" i.e. sum of the given 15-minute block plus three immediatelly preceeding blocks (if available).

@@ -106,7 +106,7 @@ def summarize(entries):
 
 def present(entries):
     for entry in entries:
-        print(", ".join(str(i) for i in entry[0:5]))
+        print(",".join(str(i) for i in entry[0:5]))
 
 def present_to_sheets(entries, summarized):
     df = pd.DataFrame()
