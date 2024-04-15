@@ -25,7 +25,8 @@ class FrameDropDecorator:
     def read(self):
         with self.condition:
             if self.last_frame is None:
-                self.condition.wait()
+                if not self.condition.wait(10):
+                    raise RuntimeError("Timeout waiting for a frame")
             frame = self.last_frame
             self.last_frame = None
             return frame
