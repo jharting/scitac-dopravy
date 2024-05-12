@@ -57,7 +57,9 @@ counter.set_args(
     reg_pts=config['region_points'],
     classes_names=model.names,
     draw_tracks=True,
-    count_txt_thickness=1
+    line_thickness=2,
+    track_thickness=2,
+    region_thickness=2
 )
 
 cap = cv2.VideoCapture(args.stream)
@@ -78,8 +80,8 @@ while not shutdown_handler.stopped():
     tracks = model.track(im0, persist=True, show=False, classes=classes_to_count, conf=config['confidence_threshold'])
     im0 = counter.start_counting(im0, tracks)
 
-    if len(counter.counting_list) > count:
+    if len(counter.count_ids) > count:
         store_hit(im0, config)
 
-    count = len(counter.counting_list)
+    count = len(counter.count_ids)
     print(count)
