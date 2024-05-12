@@ -7,7 +7,7 @@ Traffic data is aggregated and a report compatible with [TP 189](https://pjpk.rs
 ## Installation
 
 ```sh
-pip -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 
 pip install -r requirements.txt
