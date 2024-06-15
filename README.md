@@ -79,3 +79,18 @@ The reports can be directly uploaded to Google Sheets:
   ```sh
   python evaluate.py -d 'name of the Google Sheet' -saf 'path-to-service-account-key' -s 'sheet number'
   ```
+
+## Running on NVIDIA Jetson Nano
+
+1. Follow https://medium.com/@jgleeee/building-docker-images-that-require-nvidia-runtime-environment-1a23035a3a58 to configure nvidia as the default Docker runtime
+1. Build the container image
+
+   ```sh
+   sudo docker build . -t traffic
+   ```
+
+1. Run the container
+
+   ```sh
+   sudo docker run -v $(pwd)/workdir:/traffic/workdir -e TZ=Europe/Prague traffic -- <stream>
+   ```
