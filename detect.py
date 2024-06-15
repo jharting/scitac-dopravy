@@ -76,6 +76,7 @@ while not shutdown_handler.stopped():
         exit(0)
 
     im0 = crop(im0, config['crop'])
+    # print(im0.shape)
 
     tracks = model.track(
         im0,
