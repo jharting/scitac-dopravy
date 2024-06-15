@@ -50,16 +50,16 @@ config = parseConfig(args.config)
 model = YOLO(config['model'])
 classes_to_count = config['classes_to_count']
 
-counter = object_counter.ObjectCounter()
-
-counter.set_args(
+counter = object_counter.ObjectCounter(
     view_img=True,
     reg_pts=config['region_points'],
     classes_names=model.names,
     draw_tracks=True,
     line_thickness=2,
     track_thickness=2,
-    region_thickness=2
+    region_thickness=2,
+    view_in_counts=False,
+    view_out_counts=False
 )
 
 cap = cv2.VideoCapture(args.stream)
