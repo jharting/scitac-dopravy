@@ -3,7 +3,8 @@ model: yolov8m.pt
 confidence_threshold: 0.1
 classes_to_count:
 - 2 # car
-- 5 # bus
+#- 3 # motorcycle
+#- 5 # bus
 - 7 # truck
 
 workdir: workdir
@@ -12,13 +13,18 @@ store_frame: False # if enabled, the entire frame is stored in workdir once a ve
 
 # Determines the region in which vehicles are counted
 region_points:
-- [0, 130]
-- [280, 100]
-- [280, 190]
-- [0, 230]
+- [60, 97]
+- [240, 72]
+- [240, 172]
+- [60, 192]
 
 # Remove unused edges of the image stream for faster processing
 crop:
 -
-  - [0, 90]
-  - [210, 270]
+  - [0, 108]
+  - [192, 252]
+-
+  - [0, 50]
+  - [512, 590]
+
+imgsz: [192, 512]

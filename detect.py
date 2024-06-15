@@ -77,7 +77,15 @@ while not shutdown_handler.stopped():
 
     im0 = crop(im0, config['crop'])
 
-    tracks = model.track(im0, persist=True, show=False, classes=classes_to_count, conf=config['confidence_threshold'])
+    tracks = model.track(
+        im0,
+        persist=True,
+        show=False,
+        classes=classes_to_count,
+        conf=config['confidence_threshold'],
+        imgsz=tuple(config['imgsz'])
+    )
+
     im0 = counter.start_counting(im0, tracks)
 
     if len(counter.count_ids) > count:
