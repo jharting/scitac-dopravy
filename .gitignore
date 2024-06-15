@@ -1,4 +1,6 @@
 .venv
 *.pt
+*.onnx
+*.engine
 __pycache__
 service-account.json
